@@ -52,7 +52,7 @@ function showCakeCuttingPage() {
     cakeCuttingPage.classList.add('cake-cutting');
     cakeCuttingPage.innerHTML = `
         <h1>🎂 Cake Cutting Time! 🎉</h1>
-        <img src="Cake.jpg" alt="Birthday Cake" class="cake" id="cakeImage">
+        <img src="Index/Cake.jpg" alt="Birthday Cake" class="cake" id="cakeImage">
         <p>Let's make a wish and blow out the candles!</p>
         <button id="celebrateButton">Celebrate!</button>
     `;
