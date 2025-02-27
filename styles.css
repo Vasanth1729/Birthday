@@ -1,0 +1,138 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden; /* Prevent scrollbars from appearing */
+}
+
+.background-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #ff69b4, #ffcc00, #00ccff, #ff6600, #66ff00);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+    z-index: -1; /* Send background behind other elements */
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1; /* Ensure the container is above the confetti */
+    text-align: center;
+}
+
+.birthday-wish {
+    color: #ff69b4;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease-in;
+}
+
+.message {
+    font-size: 1.2em;
+    color: #333;
+    animation: fadeIn 2s ease-in 0.5s; /* Delay for the message */
+}
+
+.click-me {
+    padding: 10px 20px;
+    font-size: 1.5em;
+    background-color: #ff69b4;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+.click-me:hover {
+    background-color: #ff1493;
+}
+
+.hearts {
+    font-size: 2em;
+    margin-top: 20px;
+}
+
+.heart {
+    display: inline-block;
+    animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+.confetti {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Prevent interaction with confetti */
+    overflow: hidden;
+}
+
+.confetti-piece {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #ff69b4;
+    opacity: 0.8;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% { transform: translateY(-10%); }
+    100% { transform: translateY(100vh); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.hidden {
+    display: none; /* Hide elements with this class */
+}
+.cake-cutting {
+    display: flex; /* Use flexbox for centering */
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    height: 100vh; /* Full viewport height */
+    text-align: center; /* Center text */
+}
+
+/* Cake Cutting Page Styles */
+.cake-cut {
+    animation: cutCake 2s backwards; /* Animation for cutting the cake */
+}
+
+@keyframes cutCake {
+    0% { transform: scaleX(1); }
+    50% { transform: scaleX(0.5); } /* Scale down to simulate cutting */
+    100% { transform: scaleX(1); } /* Scale back to original */
+}
+
+/* Additional styles for the cake image */
+.cake {
+   
+    width: 200px; /* Adjust the width of the cake image */
+    margin: 0 auto; /* Center the cake image */
+    position: relative; /* Position relative for the cutting effect */
+    transition: transform 1s; /* Smooth transition for the cutting effect */
+}
